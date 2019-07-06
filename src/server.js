@@ -1,4 +1,3 @@
-const axios = require("axios");
 const Koa = require("koa");
 const Router = require("koa-router");
 const Compress = require("koa-compress");
@@ -34,7 +33,7 @@ function isHate(text) {
     const stems = snowball.stemword(splitUp);
     const processedText = stems.join(" ");
 
-    const result = sentiment.analyze(text);
+    const result = sentiment.analyze(processedText);
     console.log(result);
     return result.score < 0;
 }
