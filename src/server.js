@@ -19,21 +19,67 @@ const SCHEME = {
     }
 };
 
+const OPTIONS = {
+    extras: [
+        "sissy",
+        "deepfake",
+        "masturbation",
+        "fucking",
+        "chubby",
+        "gay",
+        "masturbate",
+        "cum",
+        "shit",
+        "milf",
+        "loli",
+        "erections",
+        "erection",
+        "tribute",
+        "tributes",
+        "dick",
+        "pussy",
+        "incest",
+        "trap",
+        "celebrities",
+        "celeb",
+        "fap",
+        "fappening",
+        "blacked",
+        "niggers",
+        "nazi",
+        "hitler",
+        "deepnude",
+        "creep",
+        "furry",
+        "furries",
+    ].map(word => {
+            return {[word]: -20}
+        }
+    ).reduce(
+        (acc, curr) => {
+            const key = Object.keys(curr)[0];
+            acc[key] = curr[key];
+            return acc;
+        }, {})
+};
+
 const ALPHABETIC_REGEX = /[^\w\s]/gi;
 
 function isHate(text) {
-    const rawTextResult = sentiment.analyze(text);
+    const rawTextResult = sentiment.analyze(text, OPTIONS);
     if (rawTextResult.score < 0) {
         console.log(rawTextResult);
         return true;
     }
 
-    const onlyAlphabetic = text.replace(ALPHABETIC_REGEX, "");
+    const onlyAlphabetic = text.replace(ALPHABETIC_REGEX, " ");
+    console.log(onlyAlphabetic);
+
     const splitUp = onlyAlphabetic.split(" ");
     const stems = snowball.stemword(splitUp);
     const processedText = stems.join(" ");
 
-    const result = sentiment.analyze(processedText);
+    const result = sentiment.analyze(processedText, OPTIONS);
     console.log(result);
     return result.score < 0;
 }
