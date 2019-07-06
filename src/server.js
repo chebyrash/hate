@@ -19,40 +19,43 @@ const SCHEME = {
     }
 };
 
+const BLACKLIST = [
+    "sissy",
+    "deepfake",
+    "masturbation",
+    "fucking",
+    "chubby",
+    "gay",
+    "masturbate",
+    "cum",
+    "shit",
+    "milf",
+    "loli",
+    "erections",
+    "erection",
+    "tribute",
+    "tributes",
+    "dick",
+    "pussy",
+    "incest",
+    "trap",
+    "celebrities",
+    "celeb",
+    "fap",
+    "fappening",
+    "blacked",
+    "niggers",
+    "nazi",
+    "hitler",
+    "deepnude",
+    "creep",
+    "furry",
+    "furries",
+    "butt"
+];
+
 const OPTIONS = {
-    extras: [
-        "sissy",
-        "deepfake",
-        "masturbation",
-        "fucking",
-        "chubby",
-        "gay",
-        "masturbate",
-        "cum",
-        "shit",
-        "milf",
-        "loli",
-        "erections",
-        "erection",
-        "tribute",
-        "tributes",
-        "dick",
-        "pussy",
-        "incest",
-        "trap",
-        "celebrities",
-        "celeb",
-        "fap",
-        "fappening",
-        "blacked",
-        "niggers",
-        "nazi",
-        "hitler",
-        "deepnude",
-        "creep",
-        "furry",
-        "furries",
-    ].map(word => {
+    extras: BLACKLIST.map(word => {
             return {[word]: -20}
         }
     ).reduce(
