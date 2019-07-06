@@ -1,2 +1,2 @@
 # HATE
-Text Sentiment Analysis
+Hate Speech Detection
