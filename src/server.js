@@ -20,6 +20,8 @@ const SCHEME = {
 };
 
 const BLACKLIST = [
+    "cuck",
+    "cuckold",
     "sissy",
     "deepfake",
     "masturbation",
