@@ -20,6 +20,10 @@ const SCHEME = {
 };
 
 const BLACKLIST = [
+    "paedophile",
+    "bbc",
+    "gangbang",
+    "succ",
     "cuck",
     "cuckold",
     "sissy",
@@ -50,6 +54,9 @@ const BLACKLIST = [
     "nazi",
     "hitler",
     "deepnude",
+    "deepnudes",
+    "wife",
+    "slut",
     "creep",
     "furry",
     "furries",
