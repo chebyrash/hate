@@ -20,6 +20,16 @@ const SCHEME = {
 };
 
 const BLACKLIST = [
+    "boner",
+    "moms",
+    "socials",
+    "turned",
+    "deep",
+    "penises",
+    "thread",
+    "porn",
+    "rekt",
+    "swallow",
     "paedophile",
     "bbc",
     "gangbang",
