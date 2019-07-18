@@ -19,76 +19,10 @@ const SCHEME = {
     }
 };
 
-const BLACKLIST = [
-    "boner",
-    "moms",
-    "socials",
-    "turned",
-    "deep",
-    "penises",
-    "thread",
-    "porn",
-    "rekt",
-    "swallow",
-    "paedophile",
-    "bbc",
-    "gangbang",
-    "succ",
-    "cuck",
-    "cuckold",
-    "sissy",
-    "deepfake",
-    "masturbation",
-    "fucking",
-    "chubby",
-    "gay",
-    "masturbate",
-    "cum",
-    "shit",
-    "milf",
-    "loli",
-    "erections",
-    "erection",
-    "tribute",
-    "tributes",
-    "dick",
-    "pussy",
-    "incest",
-    "trap",
-    "celebrities",
-    "celeb",
-    "fap",
-    "fappening",
-    "blacked",
-    "niggers",
-    "nazi",
-    "hitler",
-    "deepnude",
-    "deepnudes",
-    "wife",
-    "slut",
-    "creep",
-    "furry",
-    "furries",
-    "butt"
-];
-
-const OPTIONS = {
-    extras: BLACKLIST.map(word => {
-            return {[word]: -20}
-        }
-    ).reduce(
-        (acc, curr) => {
-            const key = Object.keys(curr)[0];
-            acc[key] = curr[key];
-            return acc;
-        }, {})
-};
-
 const ALPHABETIC_REGEX = /[^\w\s]/gi;
 
 function isHate(text) {
-    const rawTextResult = sentiment.analyze(text, OPTIONS);
+    const rawTextResult = sentiment.analyze(text);
     if (rawTextResult.score < 0) {
         console.log(rawTextResult);
         return true;
@@ -101,7 +35,7 @@ function isHate(text) {
     const stems = snowball.stemword(splitUp);
     const processedText = stems.join(" ");
 
-    const result = sentiment.analyze(processedText, OPTIONS);
+    const result = sentiment.analyze(processedText);
     console.log(result);
     return result.score < 0;
 }
