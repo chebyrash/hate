@@ -10,7 +10,7 @@ text    | string | Yes
     
 ## Example Request
 ```bash
-https://localhost/?text=bad
+http://localhost/?text=bad
 ```
 
 ## Example Response
